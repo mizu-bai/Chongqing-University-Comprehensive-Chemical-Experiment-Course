@@ -50,7 +50,7 @@ xlabel('$$ pH $$', 'Interpreter', 'latex');
 ylabel('$$ E / V $$', 'Interpreter', 'latex');
 title('$$ E - pH $$', 'Interpreter', 'latex');
 
-% Print
+% Output
 
 fprintf('E = %.2f * pH + %.2f\n', p(1), p(2));
 fprintf('R ^ 2 = %.2f\n', Rsq);
