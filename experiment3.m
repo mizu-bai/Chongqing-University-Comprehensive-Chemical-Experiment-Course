@@ -54,7 +54,7 @@ xlabel('$$ c(KCl) / {{mol} \cdot {L} ^ {-1}} $$', 'Interpreter', 'latex');
 ylabel('$$ \ln {{t}_{ind}} $$', 'Interpreter', 'latex');
 title('$$ \ln {{t}}_{ind} - c $$', 'Interpreter', 'latex');
 
-% Print
+% Output
 
 fprintf('ln t = %.2f * c + %.2f\n', p(1), p(2));
 fprintf('R ^ 2 = %.2f\n', Rsq);
