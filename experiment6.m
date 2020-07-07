@@ -12,7 +12,7 @@ clc;
 data = table;
 
 data.V = [(0: 0.5: 2.0), 3.0]';
-data.A = [0.052, 0.039, 0.032, 0.026, 0.022, 0.020]';
+data.A = [0.052, 0.039, 0.032, 0.026, 0.022, 0.020]'; % Remember to replace the example with your own data!!!
 
 % Curve Fit
 
@@ -35,7 +35,7 @@ a0 = [exp(p(2)), p(1), 0];
 
 % Sample
 
-Ax = 0.043;
+Ax = 0.043; % Remember to replace the example with your own data!!!
 
 for Vx = 0: 0.00001: 0.5
     
