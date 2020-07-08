@@ -24,7 +24,7 @@ xlabel('$$ V / V $$', 'Interpreter', 'latex');
 ylabel('$$ I / A $$', 'Interpreter', 'latex');
 title('Cyclic Voltammetry');
 legend({'5 mV / s', '10 mV / s', '15 mV / s', '20 mV / s', '25 mV / s', '30 mV / s'}, 'Location', 'northwest');
-% If your MATLAB is not new enough to run this `legend` command, 
-% legend({'5 mV / s', '10 mV / s', '15 mV / s', '20 mV / s', '25 mV / s', '30 mV / s'}, 'Location', 'northwest');
+% If your MATLAB is not new enough to run this `legend` command with `'Location'`, please try the command in next line instead.
+% legend({'5 mV / s', '10 mV / s', '15 mV / s', '20 mV / s', '25 mV / s', '30 mV / s'}, 2);
 
 hold off;
