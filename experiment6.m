@@ -1,6 +1,6 @@
 % Comprehensive Chemical Experiment 6
 
-% Research on properties of carbon nitride quantum dots mimic enzyme and measuring the content of GSH in serum
+% Research on properties of carbon nitride quantum dots model enzyme and measuring the content of GSH in serum
 
 % Initialization
 
