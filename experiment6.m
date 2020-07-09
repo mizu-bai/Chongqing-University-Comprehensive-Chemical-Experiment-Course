@@ -29,19 +29,19 @@ p = polyfit(data.V, data.logA, 1);
 xdata = data.V;
 ydata = data.A;
 
-fun = @(a, xdata) a(1) * exp(a(2) * xdata) + a(3);
-a0 = [exp(p(2)), p(1), 0];
-[A, resnorm] = lsqcurvefit(fun, a0, xdata, ydata);
+fun = @(q, xdata) q(1) * exp(q(2) * xdata + q(3)) + q(4);
+q0 = [exp(p(2)), p(1), 0, 0];
+[Q, resnorm] = lsqcurvefit(fun, q0, xdata, ydata);
 
 % Sample
 
 Ax = 0.043; % Remember to replace the example with your own data!!!
 
-for Vx = 0: 0.00001: 0.5
+for Vx = 0: 0.0001: 3.0
     
-    At = A(1) * exp(A(2) * Vx) + A(3);
+    At = Q(1) * exp(Q(2) * Vx + Q(3)) + Q(4);
     
-    if At >= Ax - 0.0001 && At <= Ax + 0.0001
+    if At >= Ax - 0.001 && At <= Ax + 0.001
         
         break;
         
@@ -55,7 +55,7 @@ plot(Vx, Ax, 'g*');
 
 curve = table;
 curve.V = 0: 0.1: 3.0;
-curve.A = A(1) * exp(A(2) * curve.V) + A(3);
+curve.A = Q(1) * exp(Q(2) * curve.V + Q(3)) + Q(4);
 
 plot(data.V, data.A, 'ro', curve.V, curve.A, 'b-', Vx, Ax, 'g*');
 hold off;
@@ -65,5 +65,5 @@ title('$$ {V}_{add}(GSH) - A $$', 'Interpreter', 'latex');
 
 % Output
 
-fprintf('A = %.3f * exp(%.3f * v) - %.3f\n', A(1), A(2), A(3));
+fprintf('A = %f * exp(%f * v + %f) - %f\n', Q);
 fprintf('The content of GSH in 1 mL serum sample is equal to the content in %.2f mL 0.010 mol * L ^ (-1) standard GSH sloution.\n', Vx);
